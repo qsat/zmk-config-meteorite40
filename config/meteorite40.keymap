@@ -27,6 +27,16 @@
             bindings = <&msc>, <&msc>;
             tap-ms = <25>;
         };
+        ss: space_and_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPACE_AND_SHIFT";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     combos {
@@ -34,48 +44,49 @@
 
         lang1 {
             bindings = <&kp LANG1>;
+            timeout-ms = <100>;
             key-positions = <12 13>; /* D + F */
             layers = <0>;
         };
 
         lang2 {
             bindings = <&kp LANG2>;
+            timeout-ms = <100>;
             key-positions = <16 17>; /* J + K */
             layers = <0>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <20 21>; /* Z + X */
-            layers = <0>;
-        };
-
-        tab {
-            bindings = <&kp TAB>;
+            timeout-ms = <100>;
             key-positions = <0 1>; /* Q + W */
             layers = <0>;
         };
 
         home {
             bindings = <&kp HOME>;
+            timeout-ms = <100>;
             key-positions = <16 17>; /* J + K (on layer 2) */
             layers = <2>;
         };
 
         end {
             bindings = <&kp END>;
+            timeout-ms = <100>;
             key-positions = <18 19>; /* L + - (on layer 2) */
             layers = <2>;
         };
 
         ctrl_home {
             bindings = <&kp LC(HOME)>;
+            timeout-ms = <100>;
             key-positions = <16 18>; /* J + L (on layer 2) */
             layers = <2>;
         };
 
         ctrl_end {
             bindings = <&kp LC(END)>;
+            timeout-ms = <100>;
             key-positions = <17 19>; /* K + - (on layer 2) */
             layers = <2>;
         };
@@ -90,8 +101,8 @@
             bindings = <
     &kp Q        &kp W       &kp E        &kp R      &kp T                                 &kp Y       &kp U       &kp I      &kp O         &kp P
     &kp A        &kp S       &kp D        &kp F      &kp G                                 &kp H       &kp J       &kp K      &kp L         &kp SEMI
-    &mt LCTRL Z  &mt RALT X  &kp C        &kp V      &kp B             &mkp MB1  &mkp MB2  &kp N       &kp M       &kp COMMA  &mt RALT DOT  &mt LCTRL ENTER
-                             &mt LCMD ESC &lt 1 ESC  &mt LSHIFT ENTER  &trans    &trans    &lt 4 SPACE &lt 2 BSPC  &mt LCMD BSPC
+    &mt LCTRL Z  &mt RALT X  &kp C        &kp V      &kp B             &mkp MB1  &mkp MB2  &kp N       &kp M       &kp COMMA  &mt RALT DOT  &ss LCTRL ENTER
+                             &ss LCMD ESC &lt 1 ESC  &mt LSHIFT ENTER  &trans    &trans    &lt 4 SPACE &lt 2 BSPC  &ss LCMD BSPC
             >;
 
             sensor-bindings =
