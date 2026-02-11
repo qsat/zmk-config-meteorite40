@@ -44,49 +44,56 @@
 
         lang1 {
             bindings = <&kp LANG1>;
-            timeout-ms = <130>;
+            timeout-ms = <200>;
             key-positions = <12 13>; /* D + F */
             layers = <0>;
         };
 
         lang2 {
             bindings = <&kp LANG2>;
-            timeout-ms = <130>;
+            timeout-ms = <200>;
             key-positions = <16 17>; /* J + K */
+            layers = <0>;
+        };
+
+        cmd {
+            bindings = <&kp LGUI>;
+            timeout-ms = <200>;
+            key-positions = <16 18>; /* J + L */
             layers = <0>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
-            timeout-ms = <130>;
+            timeout-ms = <200>;
             key-positions = <0 1>; /* Q + W */
             layers = <0>;
         };
 
         home {
             bindings = <&kp HOME>;
-            timeout-ms = <130>;
+            timeout-ms = <200>;
             key-positions = <16 17>; /* J + K (on layer 2) */
             layers = <2>;
         };
 
         end {
             bindings = <&kp END>;
-            timeout-ms = <130>;
+            timeout-ms = <200>;
             key-positions = <18 19>; /* L + - (on layer 2) */
             layers = <2>;
         };
 
         ctrl_home {
             bindings = <&kp LC(HOME)>;
-            timeout-ms = <130>;
+            timeout-ms = <200>;
             key-positions = <16 18>; /* J + L (on layer 2) */
             layers = <2>;
         };
 
         ctrl_end {
             bindings = <&kp LC(END)>;
-            timeout-ms = <130>;
+            timeout-ms = <200>;
             key-positions = <17 19>; /* K + - (on layer 2) */
             layers = <2>;
         };
@@ -101,7 +108,7 @@
             bindings = <
     &kp Q        &kp W       &kp E         &kp R      &kp T                                 &kp Y             &kp U       &kp I          &kp O          &kp P
     &kp A        &kp S       &kp D         &kp F      &kp G                                 &kp H             &kp J       &kp K          &kp L          &kp SEMI
-    &mt LCTRL Z  &mt RALT X  &kp C         &kp V      &kp B             &mkp MB1  &mkp MB2  &kp N             &kp M       &kp COMMA      &mt LCTRL DOT  &kp RENT
+    &mt LCTRL Z  &mt RALT X  &kp C         &kp V      &kp B             &mkp MB1  &lt 4 N   &kp N             &kp M       &kp COMMA      &mt LCTRL DOT  &kp RENT
                              &ss LGUI ESC  &lt 1 ESC  &ss LSHIFT ENTER  &trans    &trans    &ss LSHIFT SPACE  &lt 2 BSPC  &ss LGUI BSPC
             >;
 
