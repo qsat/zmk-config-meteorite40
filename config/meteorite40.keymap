@@ -44,49 +44,49 @@
 
         lang1 {
             bindings = <&kp LANG1>;
-            timeout-ms = <100>;
+            timeout-ms = <130>;
             key-positions = <12 13>; /* D + F */
             layers = <0>;
         };
 
         lang2 {
             bindings = <&kp LANG2>;
-            timeout-ms = <100>;
+            timeout-ms = <130>;
             key-positions = <16 17>; /* J + K */
             layers = <0>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
-            timeout-ms = <100>;
+            timeout-ms = <130>;
             key-positions = <0 1>; /* Q + W */
             layers = <0>;
         };
 
         home {
             bindings = <&kp HOME>;
-            timeout-ms = <100>;
+            timeout-ms = <130>;
             key-positions = <16 17>; /* J + K (on layer 2) */
             layers = <2>;
         };
 
         end {
             bindings = <&kp END>;
-            timeout-ms = <100>;
+            timeout-ms = <130>;
             key-positions = <18 19>; /* L + - (on layer 2) */
             layers = <2>;
         };
 
         ctrl_home {
             bindings = <&kp LC(HOME)>;
-            timeout-ms = <100>;
+            timeout-ms = <130>;
             key-positions = <16 18>; /* J + L (on layer 2) */
             layers = <2>;
         };
 
         ctrl_end {
             bindings = <&kp LC(END)>;
-            timeout-ms = <100>;
+            timeout-ms = <130>;
             key-positions = <17 19>; /* K + - (on layer 2) */
             layers = <2>;
         };
@@ -99,10 +99,10 @@
         win_default_layer {
             display-name = "BASE";
             bindings = <
-    &kp Q        &kp W       &kp E   &kp R         &kp T                                     &kp Y       &kp U          &kp I      &kp O         &kp P
-    &kp A        &kp S       &kp D   &kp F         &kp G                                     &kp H       &kp J          &kp K      &kp L         &kp SEMI
-    &mt LCTRL Z  &mt RALT X  &kp C   &kp V         &kp B      &mkp MB1          &mkp MB2     &kp N       &kp M          &kp COMMA  &mt RALT DOT  &ss LCTRL ENTER
-                             &trans  &ss LCMD ESC  &lt 1 ESC  &mt LSHIFT ENTER  &lt 4 SPACE  &lt 2 BSPC  &ss LCMD BSPC  &trans    
+    &kp Q        &kp W       &kp E   &kp R      &kp T                               &kp Y             &kp U       &kp I          &kp O      &kp P
+    &kp A        &kp S       &kp D   &kp F      &kp G                               &kp H             &kp J       &kp K          &kp L      &kp SEMI
+    &mt LCTRL Z  &mt RALT X  &kp C   &kp V      &kp B           &mkp MB1  &mkp MB2  &kp N             &kp M       &kp COMMA      &lt 4 DOT  &ss LCTRL ENTER
+                             &trans  &lt 1 ESC  &ss LGUI ENTER  &trans    &trans    &rs LSHIFT SPACE  &lt 2 BSPC  &ss LGUI BSPC
             >;
 
             sensor-bindings =
@@ -117,9 +117,9 @@
             display-name = "SYMBOLS";
             bindings = <
                 &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                     &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR
-                &kp TILDE  &kp F13   &kp F14   &kp F15   &kp F16                       &trans     &kp UNDER  &kp PLUS         &kp LBRC  &kp RBRC
+                &kp TILDE  &mkp MB2  &mkp MB3  &mkp MB1  &kp F16                       &trans     &kp UNDER  &kp PLUS         &kp LBRC  &kp RBRC
                 &kp BSLH   &kp F17   &kp F18   &kp F19   &kp F20   &trans    &trans    &trans     &kp DQT    &kp LT           &kp GT    &kp QMARK
-                                     &trans    &trans    &trans    &trans    &kp TAB   &mo 3      &trans     &trans    
+                                     &trans    &trans    &trans    &trans    &trans    &kp TAB    &mo 3      &trans     
             >;
 
             sensor-bindings =
@@ -135,7 +135,7 @@
                 &kp N1     &kp N2  &kp N3  &kp N4  &kp N5                          &kp N6        &kp N7        &kp N8        &kp N9       &kp N0 
                 &kp GRAVE  &trans  &trans  &trans  &trans                          &trans        &kp MINUS     &kp EQUAL     &kp LBKT     &kp RBKT
                 &kp PIPE   &trans  &trans  &trans  &trans     &trans    &trans     &trans        &kp SQT       &kp LT        &kp GT       &kp FSLH
-                                   &trans  &trans  &mo 3      &trans    &trans     &trans        &trans        &trans
+                                   &trans  &mo 3   &trans     &trans    &trans     &trans        &trans        &trans
             >;
 
             sensor-bindings =
