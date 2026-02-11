@@ -99,10 +99,10 @@
         win_default_layer {
             display-name = "BASE";
             bindings = <
-    &kp Q        &kp W       &kp E        &kp R      &kp T                                 &kp Y       &kp U       &kp I      &kp O         &kp P
-    &kp A        &kp S       &kp D        &kp F      &kp G                                 &kp H       &kp J       &kp K      &kp L         &kp SEMI
-    &mt LCTRL Z  &mt RALT X  &kp C        &kp V      &kp B             &mkp MB1  &mkp MB2  &kp N       &kp M       &kp COMMA  &mt RALT DOT  &ss LCTRL ENTER
-                             &ss LCMD ESC &lt 1 ESC  &mt LSHIFT ENTER  &trans    &trans    &lt 4 SPACE &lt 2 BSPC  &ss LCMD BSPC
+    &kp Q        &kp W       &kp E   &kp R         &kp T                                     &kp Y       &kp U          &kp I      &kp O         &kp P
+    &kp A        &kp S       &kp D   &kp F         &kp G                                     &kp H       &kp J          &kp K      &kp L         &kp SEMI
+    &mt LCTRL Z  &mt RALT X  &kp C   &kp V         &kp B      &mkp MB1          &mkp MB2     &kp N       &kp M          &kp COMMA  &mt RALT DOT  &ss LCTRL ENTER
+                             &trans  &ss LCMD ESC  &lt 1 ESC  &mt LSHIFT ENTER  &lt 4 SPACE  &lt 2 BSPC  &ss LCMD BSPC  &trans    
             >;
 
             sensor-bindings =
@@ -119,7 +119,7 @@
                 &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                     &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR
                 &kp TILDE  &kp F13   &kp F14   &kp F15   &kp F16                       &trans     &kp UNDER  &kp PLUS         &kp LBRC  &kp RBRC
                 &kp BSLH   &kp F17   &kp F18   &kp F19   &kp F20   &trans    &trans    &trans     &kp DQT    &kp LT           &kp GT    &kp QMARK
-                                     &trans    &trans    &trans    &trans    &trans    &kp TAB    &mo 3      &trans
+                                     &trans    &trans    &trans    &trans    &kp TAB   &mo 3      &trans     &trans    
             >;
 
             sensor-bindings =
@@ -135,7 +135,7 @@
                 &kp N1     &kp N2  &kp N3  &kp N4  &kp N5                          &kp N6        &kp N7        &kp N8        &kp N9       &kp N0 
                 &kp GRAVE  &trans  &trans  &trans  &trans                          &trans        &kp MINUS     &kp EQUAL     &kp LBKT     &kp RBKT
                 &kp PIPE   &trans  &trans  &trans  &trans     &trans    &trans     &trans        &kp SQT       &kp LT        &kp GT       &kp FSLH
-                                   &trans  &mo 3   &trans     &trans    &trans     &trans        &trans        &trans
+                                   &trans  &trans  &mo 3      &trans    &trans     &trans        &trans        &trans
             >;
 
             sensor-bindings =
