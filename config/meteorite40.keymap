@@ -41,6 +41,10 @@
 
     combos {
         compatible = "zmk,combos";
+        timeout-ms = <200>;
+        // 2. require-prior-idle-ms を入れる
+        //    「直前に他のキーを打っていない時だけ」コンボを有効に
+        require-prior-idle-ms = <150>;
 
         lang1 {
             bindings = <&kp LANG1>;
@@ -57,7 +61,7 @@
         };
 
         cmd {
-            bindings = <&kp LGUI>;
+            bindings = <&sk LGUI>;
             timeout-ms = <200>;
             key-positions = <16 18>; /* J + L */
             layers = <0>;
