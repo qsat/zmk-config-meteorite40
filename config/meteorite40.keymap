@@ -41,64 +41,56 @@
 
     combos {
         compatible = "zmk,combos";
+        
+        /* グローバル設定（すべてのコンボに適用されます） */
         timeout-ms = <200>;
-        // 2. require-prior-idle-ms を入れる
-        //    「直前に他のキーを打っていない時だけ」コンボを有効に
         require-prior-idle-ms = <150>;
 
         lang1 {
             bindings = <&kp LANG1>;
-            timeout-ms = <200>;
             key-positions = <12 13>; /* D + F */
             layers = <0>;
         };
 
         lang2 {
             bindings = <&kp LANG2>;
-            timeout-ms = <200>;
             key-positions = <16 17>; /* J + K */
             layers = <0>;
         };
 
         cmd {
             bindings = <&sk LGUI>;
-            timeout-ms = <200>;
             key-positions = <16 18>; /* J + L */
             layers = <0>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
-            timeout-ms = <200>;
             key-positions = <0 1>; /* Q + W */
             layers = <0>;
         };
 
         home {
             bindings = <&kp HOME>;
-            timeout-ms = <200>;
             key-positions = <16 17>; /* J + K (on layer 2) */
             layers = <2>;
         };
 
         end {
             bindings = <&kp END>;
-            timeout-ms = <200>;
-            key-positions = <18 19>; /* L + - (on layer 2) */
+            key-positions = <18 19>; /* L + ; (on layer 2) */
             layers = <2>;
         };
 
         ctrl_home {
             bindings = <&kp LC(HOME)>;
-            timeout-ms = <200>;
             key-positions = <16 18>; /* J + L (on layer 2) */
             layers = <2>;
         };
 
         ctrl_end {
             bindings = <&kp LC(END)>;
-            timeout-ms = <200>;
-            key-positions = <17 19>; /* K + - (on layer 2) */
+            key-positions = <17 19>; /* K + ; (on layer 2) */
             layers = <2>;
         };
     };
@@ -110,79 +102,61 @@
         win_default_layer {
             display-name = "BASE";
             bindings = <
-    &kp Q        &kp W       &kp E         &kp R      &kp T                                 &kp Y             &kp U       &kp I          &kp O          &kp P
-    &kp A        &kp S       &kp D         &kp F      &kp G                                 &kp H             &kp J       &kp K          &kp L          &kp SEMI
-    &mt LCTRL Z  &mt RALT X  &kp C         &kp V      &kp B             &mkp MB1  &lt 4 N   &kp N             &kp M       &kp COMMA      &mt LCTRL DOT  &kp RET
-                             &ss LGUI ESC  &lt 1 ESC  &ss LSHIFT ENTER  &trans    &trans    &ss LSHIFT SPACE  &lt 2 BSPC  &ss LGUI BSPC
+    &kp Q        &kp W        &kp E         &kp R        &kp T                                     &kp Y        &kp U        &kp I         &kp O          &kp P
+    &kp A        &kp S        &kp D         &kp F        &kp G                                     &kp H        &kp J        &kp K         &kp L          &kp SEMI
+    &mt LCTRL Z  &mt RALT X   &kp C         &kp V        &kp B               &mkp MB1    &lt 4 N   &kp N        &kp M        &kp COMMA     &mt LCTRL DOT  &kp RET
+                              &ss LGUI ESC  &lt 1 ESC    &ss LSHIFT ENTER    &trans      &trans    &ss LSHIFT SPACE    &lt 2 BSPC    &ss LGUI BSPC
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp LC(MINUS) LC(EQUAL)>, // RE0: ctrl + - / +,,,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>; // RE1: volume down/up
-                //<&mouse_scroll SCRL_LEFT SCRL_RIGHT>,
-			    //<&mouse_scroll SCRL_UP SCRL_DOWN>;
-
+            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(EQUAL)>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         layer_1 {
             display-name = "SYMBOLS";
             bindings = <
-                &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                     &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR
-                &kp TILDE  &mkp MB2  &kp F14   &mkp MB1  &kp F16                       &trans     &kp UNDER  &kp PLUS         &kp LBRC  &kp RBRC
-                &kp BSLH   &kp F17   &kp F18   &kp F19   &kp F20   &trans    &trans    &trans     &kp DQT    &kp LT           &kp GT    &kp QMARK
-                                     &trans    &trans    &trans    &trans    &trans    &kp TAB    &mo 3      &trans     
+    &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR
+    &kp TILDE  &mkp MB2  &kp F14   &mkp MB1  &kp F16                        &trans     &kp UNDER  &kp PLUS         &kp LBRC  &kp RBRC
+    &kp BSLH   &kp F17   &kp F18   &kp F19   &kp F20   &trans     &trans    &trans     &kp DQT    &kp LT           &kp GT    &kp QMARK
+                         &trans    &trans    &trans    &trans     &trans    &kp TAB    &mo 3      &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp LC(MINUS) LC(EQUAL)>, // RE0: ctrl + - / +,,,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>; // RE1: volume down/up
-                //<&mouse_scroll SCRL_LEFT SCRL_RIGHT>,
-				//<&mouse_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(EQUAL)>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         layer_2 {
             display-name = "NUM / ARROW";
             bindings = <
-                &kp N1     &kp N2  &kp N3  &kp N4  &kp N5                          &kp N6        &kp N7        &kp N8        &kp N9       &kp N0 
-                &kp GRAVE  &trans  &trans  &trans  &trans                          &trans        &kp MINUS     &kp EQUAL     &kp LBKT     &kp RBKT
-                &kp PIPE   &trans  &trans  &trans  &trans     &trans    &trans     &trans        &kp SQT       &kp LT        &kp GT       &kp FSLH
-                                   &trans  &mo 3   &trans     &trans    &trans     &trans        &trans        &trans
+    &kp N1     &kp N2  &kp N3  &kp N4  &kp N5                          &kp N6         &kp N7         &kp N8         &kp N9        &kp N0 
+    &kp GRAVE  &trans  &trans  &trans  &trans                          &trans         &kp MINUS      &kp EQUAL      &kp LBKT      &kp RBKT
+    &kp PIPE   &trans  &trans  &trans  &trans  &trans     &trans       &trans         &kp SQT        &kp LT         &kp GT        &kp FSLH
+                       &trans  &mo 3   &trans  &trans     &trans       &trans         &trans         &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp LC(MINUS) LC(EQUAL)>, // RE0: ctrl + - / +,,,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>; // RE1: volume down/up
-
+            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(EQUAL)>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         layer_3 {
             display-name = "FUNCTION";
             bindings = <
-                &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                  &kp F6    &kp F7    &kp F8  &kp F9     &kp F10
-                &kp F11 &kp F12 &trans  &trans  &trans                  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-                &trans  &trans  &trans  &trans  &trans  &none   &none   &trans    &trans    &trans  &trans     &bootloader
-                                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                   &kp F6     &kp F7    &kp F8   &kp F9     &kp F10
+    &kp F11  &kp F12  &trans   &trans   &trans                   &kp LEFT   &kp DOWN  &kp UP   &kp RIGHT  &trans
+    &trans   &trans   &trans   &trans   &trans  &none    &none   &trans     &trans    &trans   &trans     &bootloader
+                      &trans   &trans   &trans  &trans   &trans  &trans     &trans    &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp LC(MINUS) LC(EQUAL)>, // RE0: ctrl + - / +,,,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>; // RE1: volume down/up
-
+            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(EQUAL)>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         layer_4 {
             display-name = "SETTING";
             bindings = <
-                &ccfg C_CPI_DN  &ccfg C_CPI_UP  &ccfg C_ROT_DN   &ccfg C_ROT_UP   &ccfg C_SCALE_TOG           &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-                &ccfg C_SDIV_DN &ccfg C_SDIV_UP &ccfg C_SCRH_TOG &ccfg C_SCRV_TOG &none                       &bt BT_CLR     &bt BT_CLR_ALL  &none         &none         &none
-                &ccfg C_SAVE    &ccfg C_RESET   &none            &none            &none   &none     &none     &bootloader    &none           &none         &none         &none
-                                                &trans           &trans           &trans  &trans    &trans    &trans         &trans          &trans
+    &ccfg C_CPI_DN   &ccfg C_CPI_UP   &ccfg C_ROT_DN   &ccfg C_ROT_UP   &ccfg C_SCALE_TOG                   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+    &ccfg C_SDIV_DN  &ccfg C_SDIV_UP  &ccfg C_SCRH_TOG  &ccfg C_SCRV_TOG  &none                               &bt BT_CLR     &bt BT_CLR_ALL  &none         &none         &none
+    &ccfg C_SAVE     &ccfg C_RESET    &none            &none            &none            &none    &none     &bootloader    &none           &none         &none         &none
+                                      &trans           &trans           &trans           &trans   &trans    &trans         &trans          &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp LC(MINUS) LC(EQUAL)>, // RE0: ctrl + - / +,,,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>; // RE1: volume down/up
-
+            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(EQUAL)>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
     };
 };
